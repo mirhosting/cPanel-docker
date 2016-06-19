@@ -20,7 +20,7 @@ echo "[client]" > /root/.my.cnf;
 echo "password=$mysql_password" >> /root/.my.cnf;
 echo "user=root" >> /root/.my.cnf;
 
-cp /root/.my.cnf /root/.my.cnf.back;
+cp /root/.my.cnf /root/.$mysql_password.pass;
 
 new_ip=$(ifconfig | grep 'inet'| grep -v '127.0.0.1'| cut -d: -f2 | awk '{ print $2}' |grep -v "10." |grep -v '^\s*$');
 echo $new_ip > /var/cpanel/cpnat;
