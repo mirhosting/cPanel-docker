@@ -24,7 +24,7 @@ echo "user=root" >> /root/.my.cnf
 
 cp /root/.my.cnf /root/.my.cnf.back
 
-new_ip=$(ifconfig | grep 'inet'| grep -v '127.0.0.1'| cut -d: -f2 | awk '{ print $2}' |grep -v "10.")
+new_ip=$(ifconfig | grep 'inet'| grep -v '127.0.0.1'| cut -d: -f2 | awk '{ print $2}' |grep -v "10." |grep -v '^\s*$')
 echo $new_ip > /var/cpanel/cpnat
 
 /bin/bash
