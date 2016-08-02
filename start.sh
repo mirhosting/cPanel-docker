@@ -31,6 +31,10 @@ grep -q ADDR /etc/wwwacct.conf && sed -i_bak "s/\(ADDR\) .*/\1 $new_ip/" /etc/ww
 
 /scripts/mainipcheck
 
+killall /usr/local/cpanel/bin/safeapacherestart
+killall /usr/local/cpanel/scripts/restartsrv_httpd
+killall /usr/bin/systemctl
+
 /scripts/rebuildhttpdconf
 
 /scripts/restartsrv_httpd
