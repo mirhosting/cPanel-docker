@@ -1,5 +1,5 @@
 FROM centos:7 
-MAINTAINER Mirhosting <dev@mirhosting.com> 
+MAINTAINER MIRhosting <dev@mirhosting.com> 
 
 ENV container docker 
 
