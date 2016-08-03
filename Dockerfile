@@ -21,6 +21,10 @@ RUN yum -y update
 RUN yum -y install wget
 RUN yum -y install openssh-server
 
+COPY assets/wwwacct.conf /etc/wwwacct.conf
+RUN mkdir /root/cpanel_profile/
+COPY assets/cpanel.config /root/cpanel_profile/cpanel.config
+
 RUN rm -f /etc/sysconfig/iptables
 RUN wget -O /usr/local/src/latest.sh http://httpupdate.cpanel.net/latest
 RUN chmod +x /usr/local/src/latest.sh
