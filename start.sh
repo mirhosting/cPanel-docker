@@ -11,16 +11,13 @@ echo "user=root" >> /root/.my.cnf;
 
 mysql_password=$(</dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c8; echo "");
 
-mysql << EOF
-use mysql;
-SET PASSWORD FOR 'root'@'localhost' = PASSWORD('$mysql_password');
-EOF
+/scripts/mysqlpasswd root $mysql_password
 
-echo "[client]" > /root/.my.cnf;
+echo "[client]" >> /root/.my.cnf;
 echo "password=$mysql_password" >> /root/.my.cnf;
 echo "user=root" >> /root/.my.cnf;
 
-cp /root/.my.cnf /root/.$mysql_password.pass;
+# cp /root/.my.cnf /root/.$mysql_password.pass;
 
 /scripts/mysqlconnectioncheck
 
