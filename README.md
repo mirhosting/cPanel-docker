@@ -15,6 +15,6 @@ As an extra incentive for all Github and Dockerhub visitors to try cPanel on our
 Please consult a short video to get a better understanding! - https://www.youtube.com/watch?v=oR2OaP5rX44
 
 # IMPORTANT NOTE
-Since we are using automated build way to build docker container and currently its not properly workign with systemd and d-bus, its advised to run
+Since we are using "automated build" to build docker container in Docker Hub and currently it is not properly working with systemd and d-bus, its advised to run
  /scripts/upcp --force
 directly after you deploy your docker container to install all missing software.
