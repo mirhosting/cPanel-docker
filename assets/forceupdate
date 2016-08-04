@@ -1,0 +1,7 @@
+#!/bin/bash
+
+grep -q HOST /etc/wwwacct.conf && sed -i_bak "s/\(HOST\) .*/\1 $2/" /etc/wwwacct.conf || echo "HOST $2" >> /etc/wwwacct.conf
+
+if [ "$1" = "true" ]; then
+  /scripts/upcp --force
+fi
