@@ -13,10 +13,6 @@ mysql_password=$(</dev/urandom tr -dc '12345!@#$%qwertQWERTasdfgASDFGzxcvbZXCVB'
 
 /scripts/mysqlpasswd root $mysql_password
 
-echo "[client]" >> /root/.my.cnf;
-echo "password=$mysql_password" >> /root/.my.cnf;
-echo "user=root" >> /root/.my.cnf;
-
 # cp /root/.my.cnf /root/.$mysql_password.pass;
 
 /scripts/mysqlconnectioncheck
