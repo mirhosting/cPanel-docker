@@ -8,4 +8,3 @@ grep -q HOST /etc/wwwacct.conf && sed -i_bak "s/\(HOST\) .*/\1 ${HOSTNAME}/" /et
 if [ "${FORCESCRIPT}" = "true" ]; then
   /scripts/upcp --force
 if
-
