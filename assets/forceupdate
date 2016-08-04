@@ -5,7 +5,7 @@ HOSTNAME = "$2"
 
 grep -q HOST /etc/wwwacct.conf && sed -i_bak "s/\(HOST\) .*/\1 $HOSTNAME/" /etc/wwwacct.conf || echo "HOST $HOSTNAME" >> /etc/wwwacct.conf
 
-if [ "$FORCESCRIPT" = "on" ]; then
+if [ "$FORCESCRIPT" = "true" ]; then
   /scripts/upcp --force
 if
 
