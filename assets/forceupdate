@@ -1,0 +1,5 @@
+#!/bin/bash
+
+FORCESCRIPT = "$1"
+HOSTNAME = "$2"
+
