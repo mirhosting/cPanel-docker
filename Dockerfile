@@ -30,6 +30,8 @@ RUN wget -O /usr/local/src/latest.sh http://httpupdate.cpanel.net/latest
 RUN chmod +x /usr/local/src/latest.sh
 RUN /usr/local/src/latest.sh --target /usr/local/src/cpanel/ --noexec
 RUN sed -i 's/check_hostname();/# check_hostname();/g' /usr/local/src/cpanel/install
+RUN touch /etc/fstab
+RUN chmod 0640 /etc/fstab
 RUN cd /usr/local/src/cpanel/ && ./bootstrap --force
 
 COPY start.sh /root/start.sh
